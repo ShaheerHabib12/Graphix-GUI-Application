@@ -82,7 +82,7 @@ The main programming concepts demonstrated are: use of an external object-orient
 ```text
 Patchwork-Quilt-Generator/
 │
-├── 2601143.py    # Main program: input handling, patch design functions, and the interactive main loop
+├── main.py    # Main program: input handling, patch design functions, and the interactive main loop
 ├── graphix.py    # Supplied graphics library (Window, Point, shapes, Text, Entry)
 └── README.md
 ```
@@ -92,9 +92,9 @@ Patchwork-Quilt-Generator/
 ## Code Architecture
 
 ### `graphix.py`
-A supplied teaching library, not authored as part of this assignment, that wraps Tkinter's `Canvas` to provide an object-oriented drawing API. It exposes a `Window` class (mouse/keyboard polling via `check_mouse()` / `check_key()`) and drawable `GraphixObject` subclasses (`Point`, `Line`, `Circle`, `Oval`, `Rectangle`, `Polygon`, `Text`, `Entry`), each with settable `fill_colour`, `outline_colour`, and `outline_width` properties. `2601143.py` is built entirely on top of this API via `from graphix import *`.
+A supplied teaching library, not authored as part of this assignment, that wraps Tkinter's `Canvas` to provide an object-oriented drawing API. It exposes a `Window` class (mouse/keyboard polling via `check_mouse()` / `check_key()`) and drawable `GraphixObject` subclasses (`Point`, `Line`, `Circle`, `Oval`, `Rectangle`, `Polygon`, `Text`, `Entry`), each with settable `fill_colour`, `outline_colour`, and `outline_width` properties. `main.py` is built entirely on top of this API via `from graphix import *`.
 
-### `2601143.py`
+### `main.py`
 Contains all assignment logic, organised into four groups of functions:
 
 - **User input** (`input_three_colour`, `input_colour`, `input_size`) – console-based prompts that validate the grid size and the three chosen colours against fixed allow-lists, re-prompting on invalid input.
@@ -115,7 +115,7 @@ Contains all assignment logic, organised into four groups of functions:
    ```bash
    cd Patchwork-Quilt-Generator
    ```
-3. Ensure `graphix.py` is present in the same directory as `2601143.py` (it is imported directly via `from graphix import *`).
+3. Ensure `graphix.py` is present in the same directory as `main.py` (it is imported directly via `from graphix import *`).
 
 No `pip install` step is required, as the project has no external dependencies beyond the supplied `graphix` module and the Python standard library.
 
@@ -134,7 +134,7 @@ No `pip install` step is required, as the project has no external dependencies b
 From the project's root directory:
 
 ```bash
-python 2601143.py
+python main.py
 ```
 
 The program will first ask for input in the terminal before opening the graphics window.
